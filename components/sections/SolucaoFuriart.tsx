@@ -19,7 +19,7 @@ export function SolucaoFuriart() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 h-full items-stretch">
-          {solucao.cards.map((card, i) => (
+          {solucao.cards.map((card) => (
             <div
               key={card.id}
               className={clsx(

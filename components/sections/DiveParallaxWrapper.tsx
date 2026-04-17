@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function DiveParallaxWrapper({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current || !imageRef.current) return;
@@ -37,7 +37,7 @@ export function DiveParallaxWrapper({ children }: { children: React.ReactNode })
       <div className="absolute inset-0 w-full pointer-events-none -z-10" style={{ clipPath: "inset(0)" }}>
         <div className="sticky top-0 w-full h-screen bg-dark overflow-hidden">
           {/* We make the image container taller than the screen (e.g. 140vh) so we can scroll down it */}
-          <div className="absolute top-0 left-0 w-full h-[140vh] will-change-transform" ref={imageRef as any}>
+          <div className="absolute top-0 left-0 w-full h-[140vh] will-change-transform" ref={imageRef}>
             <img
               src="/images/herosection.png"
               alt="Diving Parallax"
